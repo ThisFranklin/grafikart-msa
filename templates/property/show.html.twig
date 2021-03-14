@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Property' %}
+
+{% block body %}
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">{# Reserve au chargement de l'image #}</div>
+				<div class="col-md-4">
+					<h1>{{ property.title }}</h1>
+					<h2>{{property.rooms}}
+						rooms -
+						{{ property.surface }}
+						m2</h2>
+					<div class="text-primary" style="font-size : 4rem; fontweigth: bold;">{{ property.formattedPrice }}
+						$</div>
+					<a href="" class="btn btn-primary">Contacter l'Agence</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container mt-4">
+		<p>
+			{{ property.description | nl2br }}
+		</p>
+		<div
+			class="row">
+			{# Cette premiere colone va contenir les infos techniques sur le bien #}
+			<div class="col-md-8">
+				<h2>Features</h2>
+				<table class="table table-striped mb-4">
+					<tr>
+						<td>
+							Living Space
+						</td>
+						<td>
+							{{property.surface}}
+							m2
+						</td>
+					</tr>
+					<tr>
+						<td>Rooms</td>
+						<td>{{property.rooms}}</td>
+					</tr>
+					<tr>
+						<td>Bedrooms</td>
+						<td>{{ property.bedrooms }}</td>
+					</tr>
+					<tr>
+						<td>Floor</td>
+						<td>{{ property.floor }}</td>
+					</tr>
+					<tr>
+						<td>Heat</td>
+						<td>{{property.heatType}}</td>
+					</tr>
+				</table>
+			</div>
+			{# Cette seconde colone va contenir les infos sur les options du bien, genre le balcon, un ascenseur, etc... #}
+			<div class="col-md-4">
+				<h2>Specificities</h2>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
